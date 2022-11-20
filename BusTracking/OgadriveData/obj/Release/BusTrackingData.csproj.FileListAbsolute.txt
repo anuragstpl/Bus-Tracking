@@ -1,0 +1,8 @@
+E:\Clients Project\Bus Tracking\Ogadrive\OgadriveData\bin\Release\OgadriveData.dll.config
+E:\Clients Project\Bus Tracking\Ogadrive\OgadriveData\bin\Release\OgadriveData.dll
+E:\Clients Project\Bus Tracking\Ogadrive\OgadriveData\bin\Release\OgadriveData.pdb
+E:\Clients Project\Bus Tracking\Ogadrive\OgadriveData\bin\Release\EntityFramework.dll
+E:\Clients Project\Bus Tracking\Ogadrive\OgadriveData\bin\Release\EntityFramework.xml
+E:\Clients Project\Bus Tracking\Ogadrive\OgadriveData\obj\Release\BusTrackingData.csprojResolveAssemblyReference.cache
+E:\Clients Project\Bus Tracking\Ogadrive\OgadriveData\obj\Release\OgadriveData.dll
+E:\Clients Project\Bus Tracking\Ogadrive\OgadriveData\obj\Release\OgadriveData.pdb

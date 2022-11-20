@@ -1,0 +1,39 @@
+<html>
+<head>
+    <title>URLTester</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        var locationServer = 'http://103.18.244.51:92/YoutubeService.asmx';
+        $(document).ready(function () {
+            $('#urltesterbtn').click(function () {
+                var completeURL = 'http://' + $('#url').text() + "/" + $('#pagename').val();
+                debugger;
+                $.ajax({
+                    type: 'POST',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: 'json',
+                    url: locationServer + "/CheckURL",
+                    data: "{'url':'" + completeURL + "'}",
+                    success: function (data) {
+                        if (data.d == true) {
+                            window.location = completeURL;
+                        }
+                        else {
+                            alert('URL is not valid.Please chek again.');
+                        }
+                    },
+                    error: function (a, b, c) {
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <form>
+        <label id="url">www.xyz.com/</label>
+        <input type="text" placeholder="" id="pagename">
+        <input type="button" value="enter" id="urltesterbtn">
+    </form>
+</body>
+</html>

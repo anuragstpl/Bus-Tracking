@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OgadriveModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="OgadriveEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Currencies" EntityType="OgadriveModel.Currency" />
+    <EntitySet Name="Places" EntityType="OgadriveModel.Place" />
+    <EntitySet Name="Status" EntityType="OgadriveModel.Status" />
+    <EntitySet Name="Users" EntityType="OgadriveModel.User" />
+    <EntitySet Name="UserBookings" EntityType="OgadriveModel.UserBooking" />
+    <EntitySet Name="UserTypes" EntityType="OgadriveModel.UserType" />
+    <EntitySet Name="VehicleCatagories" EntityType="OgadriveModel.VehicleCatagory" />
+    <AssociationSet Name="FK__VehicleCa__FkCur__34C8D9D1" Association="OgadriveModel.FK__VehicleCa__FkCur__34C8D9D1">
+      <End Role="Currency" EntitySet="Currencies" />
+      <End Role="VehicleCatagory" EntitySet="VehicleCatagories" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserBooki__DropP__45F365D3" Association="OgadriveModel.FK__UserBooki__DropP__45F365D3">
+      <End Role="Places" EntitySet="Places" />
+      <End Role="UserBooking" EntitySet="UserBookings" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserBooki__Picku__44FF419A" Association="OgadriveModel.FK__UserBooki__Picku__44FF419A">
+      <End Role="Places" EntitySet="Places" />
+      <End Role="UserBooking" EntitySet="UserBookings" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserBooki__FkSta__46E78A0C" Association="OgadriveModel.FK__UserBooki__FkSta__46E78A0C">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="UserBooking" EntitySet="UserBookings" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User__FkUserType__21B6055D" Association="OgadriveModel.FK__User__FkUserType__21B6055D">
+      <End Role="UserType" EntitySet="UserTypes" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserBooki__FkUse__440B1D61" Association="OgadriveModel.FK__UserBooki__FkUse__440B1D61">
+      <End Role="User" EntitySet="Users" />
+      <End Role="UserBooking" EntitySet="UserBookings" />
+    </AssociationSet>
+    <EntitySet Name="AuthenticationTokens" EntityType="OgadriveModel.AuthenticationToken" />
+    <AssociationSet Name="FK__Authentic__FkUse__4D94879B" Association="OgadriveModel.FK__Authentic__FkUse__4D94879B">
+      <End Role="User" EntitySet="Users" />
+      <End Role="AuthenticationToken" EntitySet="AuthenticationTokens" />
+    </AssociationSet>
+    <EntitySet Name="DriverDetails" EntityType="OgadriveModel.DriverDetail" />
+    <AssociationSet Name="FK__DriverDet__FkUse__6754599E" Association="OgadriveModel.FK__DriverDet__FkUse__6754599E">
+      <End Role="User" EntitySet="Users" />
+      <End Role="DriverDetail" EntitySet="DriverDetails" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Currency">
+    <Key>
+      <PropertyRef Name="CurrencyID" />
+    </Key>
+    <Property Name="CurrencyID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="VehicleCatagories" Relationship="OgadriveModel.FK__VehicleCa__FkCur__34C8D9D1" FromRole="Currency" ToRole="VehicleCatagory" />
+  </EntityType>
+  <EntityType Name="Place">
+    <Key>
+      <PropertyRef Name="PlaceID" />
+    </Key>
+    <Property Name="PlaceID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="PlaceName" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Latitude" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="Longitde" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="State" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="UserBookings" Relationship="OgadriveModel.FK__UserBooki__DropP__45F365D3" FromRole="Places" ToRole="UserBooking" />
+    <NavigationProperty Name="UserBookings1" Relationship="OgadriveModel.FK__UserBooki__Picku__44FF419A" FromRole="Places" ToRole="UserBooking" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="StatusID" />
+    </Key>
+    <Property Name="StatusID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="UserBookings" Relationship="OgadriveModel.FK__UserBooki__FkSta__46E78A0C" FromRole="Status" ToRole="UserBooking" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="FkUserTypeID" Type="Int32" />
+    <Property Name="FullName" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Password" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="EmailAddress" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="UserType" Relationship="OgadriveModel.FK__User__FkUserType__21B6055D" FromRole="User" ToRole="UserType" />
+    <NavigationProperty Name="UserBookings" Relationship="OgadriveModel.FK__UserBooki__FkUse__440B1D61" FromRole="User" ToRole="UserBooking" />
+    <NavigationProperty Name="AuthenticationTokens" Relationship="OgadriveModel.FK__Authentic__FkUse__4D94879B" FromRole="User" ToRole="AuthenticationToken" />
+    <NavigationProperty Name="DriverDetails" Relationship="OgadriveModel.FK__DriverDet__FkUse__6754599E" FromRole="User" ToRole="DriverDetail" />
+    <Property Type="String" Name="Latitude" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Longitude" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DevicePushToken" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="DeviceType" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="UserBooking">
+    <Key>
+      <PropertyRef Name="BookingID" />
+    </Key>
+    <Property Name="BookingID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="FkUserID" Type="Int32" />
+    <Property Name="PickupPlaceID" Type="Int32" />
+    <Property Name="DropPlaceID" Type="Int32" />
+    <Property Name="Fare" Type="Decimal" Precision="15" Scale="3" />
+    <Property Name="DistanceKM" Type="Decimal" Precision="15" Scale="3" />
+    <Property Name="FkStatusID" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Place" Relationship="OgadriveModel.FK__UserBooki__DropP__45F365D3" FromRole="UserBooking" ToRole="Places" />
+    <NavigationProperty Name="Place1" Relationship="OgadriveModel.FK__UserBooki__Picku__44FF419A" FromRole="UserBooking" ToRole="Places" />
+    <NavigationProperty Name="Status" Relationship="OgadriveModel.FK__UserBooki__FkSta__46E78A0C" FromRole="UserBooking" ToRole="Status" />
+    <NavigationProperty Name="User" Relationship="OgadriveModel.FK__UserBooki__FkUse__440B1D61" FromRole="UserBooking" ToRole="User" />
+    <Property Type="String" Name="BookingDateTime" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="UserType">
+    <Key>
+      <PropertyRef Name="UserTypeID" />
+    </Key>
+    <Property Name="UserTypeID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Users" Relationship="OgadriveModel.FK__User__FkUserType__21B6055D" FromRole="UserType" ToRole="User" />
+  </EntityType>
+  <EntityType Name="VehicleCatagory">
+    <Key>
+      <PropertyRef Name="VehichleID" />
+    </Key>
+    <Property Name="VehichleID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="FkCurrencyID" Type="Int32" />
+    <Property Name="Name" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="RatePerKM" Type="Decimal" Precision="10" Scale="3" />
+    <Property Name="BaseFare" Type="Decimal" Precision="10" Scale="3" />
+    <Property Name="WaitPerMinute" Type="Decimal" Precision="8" Scale="3" />
+    <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Currency" Relationship="OgadriveModel.FK__VehicleCa__FkCur__34C8D9D1" FromRole="VehicleCatagory" ToRole="Currency" />
+  </EntityType>
+  <Association Name="FK__VehicleCa__FkCur__34C8D9D1">
+    <End Role="Currency" Type="OgadriveModel.Currency" Multiplicity="0..1" />
+    <End Role="VehicleCatagory" Type="OgadriveModel.VehicleCatagory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Currency">
+        <PropertyRef Name="CurrencyID" />
+      </Principal>
+      <Dependent Role="VehicleCatagory">
+        <PropertyRef Name="FkCurrencyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserBooki__DropP__45F365D3">
+    <End Role="Places" Type="OgadriveModel.Place" Multiplicity="0..1" />
+    <End Role="UserBooking" Type="OgadriveModel.UserBooking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Places">
+        <PropertyRef Name="PlaceID" />
+      </Principal>
+      <Dependent Role="UserBooking">
+        <PropertyRef Name="DropPlaceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserBooki__Picku__44FF419A">
+    <End Role="Places" Type="OgadriveModel.Place" Multiplicity="0..1" />
+    <End Role="UserBooking" Type="OgadriveModel.UserBooking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Places">
+        <PropertyRef Name="PlaceID" />
+      </Principal>
+      <Dependent Role="UserBooking">
+        <PropertyRef Name="PickupPlaceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserBooki__FkSta__46E78A0C">
+    <End Role="Status" Type="OgadriveModel.Status" Multiplicity="0..1" />
+    <End Role="UserBooking" Type="OgadriveModel.UserBooking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusID" />
+      </Principal>
+      <Dependent Role="UserBooking">
+        <PropertyRef Name="FkStatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__User__FkUserType__21B6055D">
+    <End Role="UserType" Type="OgadriveModel.UserType" Multiplicity="0..1" />
+    <End Role="User" Type="OgadriveModel.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserType">
+        <PropertyRef Name="UserTypeID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="FkUserTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserBooki__FkUse__440B1D61">
+    <End Role="User" Type="OgadriveModel.User" Multiplicity="0..1" />
+    <End Role="UserBooking" Type="OgadriveModel.UserBooking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="UserBooking">
+        <PropertyRef Name="FkUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="AuthenticationToken">
+    <Key>
+      <PropertyRef Name="TokenID" />
+    </Key>
+    <Property Type="Int32" Name="TokenID" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="FkUserID" />
+    <Property Type="String" Name="Token" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="CreatedDate" Precision="3" />
+    <NavigationProperty Name="User" Relationship="OgadriveModel.FK__Authentic__FkUse__4D94879B" FromRole="AuthenticationToken" ToRole="User" />
+  </EntityType>
+  <Association Name="FK__Authentic__FkUse__4D94879B">
+    <End Type="OgadriveModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="OgadriveModel.AuthenticationToken" Role="AuthenticationToken" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="AuthenticationToken">
+        <PropertyRef Name="FkUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="DriverDetail">
+    <Key>
+      <PropertyRef Name="DriveDetailID" />
+    </Key>
+    <Property Type="Int64" Name="DriveDetailID" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="FkUserID" />
+    <Property Type="DateTime" Name="DateOfBirth" Precision="0" />
+    <Property Type="String" Name="ICNumber" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="LicenseNo" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="AccountNo" MaxLength="150" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="User" Relationship="OgadriveModel.FK__DriverDet__FkUse__6754599E" FromRole="DriverDetail" ToRole="User" />
+    <Property Type="DateTime" Name="CretedDate" Precision="3" />
+    <Property Type="DateTime" Name="UpdatedDate" Precision="3" />
+  </EntityType>
+  <Association Name="FK__DriverDet__FkUse__6754599E">
+    <End Type="OgadriveModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="OgadriveModel.DriverDetail" Role="DriverDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="DriverDetail">
+        <PropertyRef Name="FkUserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

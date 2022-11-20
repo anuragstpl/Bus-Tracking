@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>E:\Clients Project\Bus Tracking\Publish</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>05/21/2015 23:39:09</publishTime>
+    </File>
+    <File Include="bin/HtmlAgilityPack.dll">
+      <publishTime>09/23/2015 20:49:57</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>07/16/2015 02:04:16</publishTime>
+    </File>
+    <File Include="bin/Ogadrive.dll">
+      <publishTime>10/14/2015 09:55:09</publishTime>
+    </File>
+    <File Include="bin/OgadriveData.dll">
+      <publishTime>10/13/2015 20:04:23</publishTime>
+    </File>
+    <File Include="bin/PushSharp.Amazon.Adm.dll">
+      <publishTime>07/16/2015 02:04:23</publishTime>
+    </File>
+    <File Include="bin/PushSharp.Android.dll">
+      <publishTime>07/16/2015 02:04:23</publishTime>
+    </File>
+    <File Include="bin/PushSharp.Apple.dll">
+      <publishTime>07/16/2015 02:04:23</publishTime>
+    </File>
+    <File Include="bin/PushSharp.Blackberry.dll">
+      <publishTime>07/16/2015 02:04:23</publishTime>
+    </File>
+    <File Include="bin/PushSharp.Core.dll">
+      <publishTime>07/16/2015 02:04:23</publishTime>
+    </File>
+    <File Include="bin/PushSharp.FirefoxOS.dll">
+      <publishTime>07/16/2015 02:04:23</publishTime>
+    </File>
+    <File Include="bin/PushSharp.Google.Chrome.dll">
+      <publishTime>07/16/2015 02:04:23</publishTime>
+    </File>
+    <File Include="bin/PushSharp.Windows.dll">
+      <publishTime>07/16/2015 02:04:23</publishTime>
+    </File>
+    <File Include="bin/PushSharp.WindowsPhone.dll">
+      <publishTime>07/16/2015 02:04:23</publishTime>
+    </File>
+    <File Include="bin/System.IO.dll">
+      <publishTime>07/16/2015 02:04:18</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.dll">
+      <publishTime>07/16/2015 02:04:22</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Extensions.dll">
+      <publishTime>07/16/2015 02:04:22</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Primitives.dll">
+      <publishTime>07/16/2015 02:04:22</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.WebRequest.dll">
+      <publishTime>07/16/2015 02:04:22</publishTime>
+    </File>
+    <File Include="bin/System.Runtime.dll">
+      <publishTime>07/16/2015 02:04:18</publishTime>
+    </File>
+    <File Include="bin/System.Threading.Tasks.dll">
+      <publishTime>07/16/2015 02:04:18</publishTime>
+    </File>
+    <File Include="BusTrackingServices.svc">
+      <publishTime>08/08/2015 15:15:50</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>10/14/2015 08:53:36</publishTime>
+    </File>
+    <File Include="MobilePortal/css/animate.css">
+      <publishTime>09/12/2015 15:19:00</publishTime>
+    </File>
+    <File Include="MobilePortal/css/bootstrap.min.css">
+      <publishTime>09/12/2015 15:19:00</publishTime>
+    </File>
+    <File Include="MobilePortal/css/font-awesome.min.css">
+      <publishTime>09/12/2015 15:19:00</publishTime>
+    </File>
+    <File Include="MobilePortal/css/simple-line-icons.css">
+      <publishTime>09/12/2015 15:19:00</publishTime>
+    </File>
+    <File Include="MobilePortal/css/templatemo_style.css">
+      <publishTime>09/12/2015 15:19:00</publishTime>
+    </File>
+    <File Include="MobilePortal/fonts/fontawesome-webfont.eot">
+      <publishTime>09/12/2015 15:18:59</publishTime>
+    </File>
+    <File Include="MobilePortal/fonts/fontawesome-webfont.svg">
+      <publishTime>09/12/2015 15:18:59</publishTime>
+    </File>
+    <File Include="MobilePortal/fonts/fontawesome-webfont.ttf">
+      <publishTime>09/12/2015 15:18:59</publishTime>
+    </File>
+    <File Include="MobilePortal/fonts/fontawesome-webfont.woff">
+      <publishTime>09/12/2015 15:18:59</publishTime>
+    </File>
+    <File Include="MobilePortal/fonts/FontAwesome.otf">
+      <publishTime>09/12/2015 15:18:59</publishTime>
+    </File>
+    <File Include="MobilePortal/fonts/Simple-Line-Icons.dev.svg">
+      <publishTime>09/12/2015 15:18:59</publishTime>
+    </File>
+    <File Include="MobilePortal/fonts/Simple-Line-Icons.eot">
+      <publishTime>09/12/2015 15:18:59</publishTime>
+    </File>
+    <File Include="MobilePortal/fonts/Simple-Line-Icons.svg">
+      <publishTime>09/12/2015 15:18:59</publishTime>
+    </File>
+    <File Include="MobilePortal/fonts/Simple-Line-Icons.ttf">
+      <publishTime>09/12/2015 15:18:59</publishTime>
+    </File>
+    <File Include="MobilePortal/fonts/Simple-Line-Icons.woff">
+      <publishTime>09/12/2015 15:18:59</publishTime>
+    </File>
+    <File Include="MobilePortal/img/1.jpg">
+      <publishTime>09/12/2015 15:18:59</publishTime>
+    </File>
+    <File Include="MobilePortal/img/2.jpg">
+      <publishTime>09/12/2015 15:18:59</publishTime>
+    </File>
+    <File Include="MobilePortal/img/3.jpg">
+      <publishTime>09/12/2015 15:18:59</publishTime>
+    </File>
+    <File Include="MobilePortal/img/4.jpg">
+      <publishTime>09/12/2015 15:18:59</publishTime>
+    </File>
+    <File Include="MobilePortal/img/5.jpg">
+      <publishTime>09/12/2015 15:18:59</publishTime>
+    </File>
+    <File Include="MobilePortal/img/6.jpg">
+      <publishTime>09/12/2015 15:18:59</publishTime>
+    </File>
+    <File Include="MobilePortal/img/7.jpg">
+      <publishTime>09/12/2015 15:18:59</publishTime>
+    </File>
+    <File Include="MobilePortal/img/a1.jpg">
+      <publishTime>09/12/2015 15:18:59</publishTime>
+    </File>
+    <File Include="MobilePortal/img/a2.jpg">
+      <publishTime>09/12/2015 15:18:59</publishTime>
+    </File>
+    <File Include="MobilePortal/img/blog-blue.jpg">
+      <publishTime>09/12/2015 15:18:59</publishTime>
+    </File>
+    <File Include="MobilePortal/img/blog-green.jpg">
+      <publishTime>09/12/2015 15:18:59</publishTime>
+    </File>
+    <File Include="MobilePortal/img/blog-pink.jpg">
+      <publishTime>09/12/2015 15:18:59</publishTime>
+    </File>
+    <File Include="MobilePortal/img/busicon.jpg">
+      <publishTime>09/12/2015 15:18:59</publishTime>
+    </File>
+    <File Include="MobilePortal/img/offer-bg.jpg">
+      <publishTime>09/12/2015 15:18:59</publishTime>
+    </File>
+    <File Include="MobilePortal/img/shape-1.png">
+      <publishTime>09/12/2015 15:18:59</publishTime>
+    </File>
+    <File Include="MobilePortal/img/shape-2.png">
+      <publishTime>09/12/2015 15:18:59</publishTime>
+    </File>
+    <File Include="MobilePortal/img/story-bg.jpg">
+      <publishTime>09/12/2015 15:18:59</publishTime>
+    </File>
+    <File Include="MobilePortal/index.html">
+      <publishTime>10/13/2015 09:59:09</publishTime>
+    </File>
+    <File Include="MobilePortal/js/custom.min.js">
+      <publishTime>09/12/2015 15:18:59</publishTime>
+    </File>
+    <File Include="MobilePortal/js/jquery.ddslick.min.js">
+      <publishTime>09/12/2015 15:19:00</publishTime>
+    </File>
+    <File Include="MobilePortal/js/jquery.gmap3.min.js">
+      <publishTime>09/12/2015 15:19:00</publishTime>
+    </File>
+    <File Include="MobilePortal/js/jquery.min.js">
+      <publishTime>09/12/2015 15:19:00</publishTime>
+    </File>
+    <File Include="MobilePortal/js/min/custom.min.js">
+      <publishTime>09/12/2015 15:19:00</publishTime>
+    </File>
+    <File Include="MobilePortal/js/templatemo_custom.js">
+      <publishTime>09/12/2015 15:19:00</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>07/16/2015 02:05:23</publishTime>
+    </File>
+    <File Include="Sample_Page.html">
+      <publishTime>10/13/2015 21:52:28</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>10/14/2015 09:25:26</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

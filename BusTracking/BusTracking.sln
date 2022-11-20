@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusTracking", "Ogadrive\BusTracking.csproj", "{896657D5-939F-40FE-ACBC-F9A7FE36A769}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusTrackingData", "OgadriveData\BusTrackingData.csproj", "{12062ED4-EA66-409C-8A78-1CB257039663}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusTrackingPortal", "OgadrivePortal\BusTrackingPortal.csproj", "{0876B6D6-11B0-4D2A-AA71-1EC1BE2E1254}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDrive", "TestDrive\TestDrive.csproj", "{AE5FEBD0-9C88-4E04-AFDE-7F949FECE21C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{FCF0A507-CC1E-42AE-A3AC-6E91D4467AA5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataGenerator", "DataGenerator\DataGenerator.csproj", "{F00EFDEB-F28E-4C52-86CC-E7AA898E18B2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{896657D5-939F-40FE-ACBC-F9A7FE36A769}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{896657D5-939F-40FE-ACBC-F9A7FE36A769}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{896657D5-939F-40FE-ACBC-F9A7FE36A769}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{896657D5-939F-40FE-ACBC-F9A7FE36A769}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12062ED4-EA66-409C-8A78-1CB257039663}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12062ED4-EA66-409C-8A78-1CB257039663}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12062ED4-EA66-409C-8A78-1CB257039663}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12062ED4-EA66-409C-8A78-1CB257039663}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0876B6D6-11B0-4D2A-AA71-1EC1BE2E1254}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0876B6D6-11B0-4D2A-AA71-1EC1BE2E1254}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0876B6D6-11B0-4D2A-AA71-1EC1BE2E1254}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0876B6D6-11B0-4D2A-AA71-1EC1BE2E1254}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE5FEBD0-9C88-4E04-AFDE-7F949FECE21C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE5FEBD0-9C88-4E04-AFDE-7F949FECE21C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE5FEBD0-9C88-4E04-AFDE-7F949FECE21C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE5FEBD0-9C88-4E04-AFDE-7F949FECE21C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCF0A507-CC1E-42AE-A3AC-6E91D4467AA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCF0A507-CC1E-42AE-A3AC-6E91D4467AA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCF0A507-CC1E-42AE-A3AC-6E91D4467AA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCF0A507-CC1E-42AE-A3AC-6E91D4467AA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F00EFDEB-F28E-4C52-86CC-E7AA898E18B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F00EFDEB-F28E-4C52-86CC-E7AA898E18B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F00EFDEB-F28E-4C52-86CC-E7AA898E18B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F00EFDEB-F28E-4C52-86CC-E7AA898E18B2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

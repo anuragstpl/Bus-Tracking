@@ -1,0 +1,278 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{896657D5-939F-40FE-ACBC-F9A7FE36A769}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ogadrive</RootNamespace>
+    <AssemblyName>Ogadrive</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\..\..\..\Bots\SaferWeb\SaferWeb\bin\Debug\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.5\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PushSharp.Amazon.Adm, Version=2.2.1.0, Culture=neutral, PublicKeyToken=cf74b75eab2c0170, processorArchitecture=MSIL">
+      <HintPath>..\packages\PushSharp.2.2.1.0\lib\net40\PushSharp.Amazon.Adm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PushSharp.Android, Version=2.2.1.0, Culture=neutral, PublicKeyToken=cf74b75eab2c0170, processorArchitecture=MSIL">
+      <HintPath>..\packages\PushSharp.2.2.1.0\lib\net40\PushSharp.Android.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PushSharp.Apple, Version=2.2.1.0, Culture=neutral, PublicKeyToken=cf74b75eab2c0170, processorArchitecture=MSIL">
+      <HintPath>..\packages\PushSharp.2.2.1.0\lib\net40\PushSharp.Apple.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PushSharp.Blackberry, Version=2.2.1.0, Culture=neutral, PublicKeyToken=cf74b75eab2c0170, processorArchitecture=MSIL">
+      <HintPath>..\packages\PushSharp.2.2.1.0\lib\net40\PushSharp.Blackberry.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PushSharp.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=cf74b75eab2c0170, processorArchitecture=MSIL">
+      <HintPath>..\packages\PushSharp.2.2.1.0\lib\net40\PushSharp.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PushSharp.FirefoxOS, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PushSharp.2.2.1.0\lib\net40\PushSharp.FirefoxOS.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PushSharp.Google.Chrome, Version=2.2.1.0, Culture=neutral, PublicKeyToken=cf74b75eab2c0170, processorArchitecture=MSIL">
+      <HintPath>..\packages\PushSharp.2.2.1.0\lib\net40\PushSharp.Google.Chrome.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PushSharp.Windows, Version=2.2.1.0, Culture=neutral, PublicKeyToken=cf74b75eab2c0170, processorArchitecture=MSIL">
+      <HintPath>..\packages\PushSharp.2.2.1.0\lib\net40\PushSharp.Windows.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PushSharp.WindowsPhone, Version=2.2.1.0, Culture=neutral, PublicKeyToken=cf74b75eab2c0170, processorArchitecture=MSIL">
+      <HintPath>..\packages\PushSharp.2.2.1.0\lib\net40\PushSharp.WindowsPhone.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.IO, Version=2.6.9.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.9\lib\net40\System.IO.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=2.2.28.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.28\lib\net40\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.28.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.28\lib\net40\System.Net.Http.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=2.2.28.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.28\lib\net40\System.Net.Http.Primitives.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest, Version=2.2.28.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Net.Http.2.2.28\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime, Version=2.6.9.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.9\lib\net40\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Threading.Tasks, Version=2.6.9.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.9\lib\net40\System.Threading.Tasks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BusTrackingServices.svc" />
+    <Content Include="MobilePortal\css\animate.css" />
+    <Content Include="MobilePortal\css\bootstrap.min.css" />
+    <Content Include="MobilePortal\css\font-awesome.min.css" />
+    <Content Include="MobilePortal\css\simple-line-icons.css" />
+    <Content Include="MobilePortal\css\templatemo_style.css" />
+    <Content Include="MobilePortal\fonts\fontawesome-webfont.svg" />
+    <Content Include="MobilePortal\fonts\Simple-Line-Icons.dev.svg" />
+    <Content Include="MobilePortal\fonts\Simple-Line-Icons.svg" />
+    <Content Include="MobilePortal\img\1.jpg" />
+    <Content Include="MobilePortal\img\2.jpg" />
+    <Content Include="MobilePortal\img\3.jpg" />
+    <Content Include="MobilePortal\img\4.jpg" />
+    <Content Include="MobilePortal\img\5.jpg" />
+    <Content Include="MobilePortal\img\6.jpg" />
+    <Content Include="MobilePortal\img\7.jpg" />
+    <Content Include="MobilePortal\img\a1.jpg" />
+    <Content Include="MobilePortal\img\a2.jpg" />
+    <Content Include="MobilePortal\img\blog-blue.jpg" />
+    <Content Include="MobilePortal\img\blog-green.jpg" />
+    <Content Include="MobilePortal\img\blog-pink.jpg" />
+    <Content Include="MobilePortal\img\busicon.jpg" />
+    <Content Include="MobilePortal\img\offer-bg.jpg" />
+    <Content Include="MobilePortal\img\shape-1.png" />
+    <Content Include="MobilePortal\img\shape-2.png" />
+    <Content Include="MobilePortal\img\story-bg.jpg" />
+    <Content Include="MobilePortal\index.html" />
+    <Content Include="MobilePortal\js\custom.min.js" />
+    <Content Include="MobilePortal\js\jquery.ddslick.min.js" />
+    <Content Include="MobilePortal\js\jquery.gmap3.min.js" />
+    <Content Include="MobilePortal\js\jquery.min.js" />
+    <Content Include="MobilePortal\js\min\custom.min.js" />
+    <Content Include="MobilePortal\js\templatemo_custom.js" />
+    <Content Include="Sample_Page.html" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Helper.cs" />
+    <Compile Include="Common\UserType.cs" />
+    <Compile Include="CustomHeaderMessageInspector.cs" />
+    <Compile Include="DTO\BookingDTO.cs" />
+    <Compile Include="DTO\DriverDTO.cs" />
+    <Compile Include="DTO\Location.cs" />
+    <Compile Include="DTO\UserDTO.cs" />
+    <Compile Include="DTO\VehicleCategory.cs" />
+    <Compile Include="BusTrackingServices.svc.cs">
+      <DependentUpon>BusTrackingServices.svc</DependentUpon>
+    </Compile>
+    <Compile Include="EnableCrossOriginResourceSharingBehavior.cs" />
+    <Compile Include="IBusTracking.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Request\ChangePasswordRequest.cs" />
+    <Compile Include="Request\CreateUserRequest.cs" />
+    <Compile Include="Request\DriverLoginRequest.cs" />
+    <Compile Include="Request\EditUserRequest.cs" />
+    <Compile Include="Request\ForgetPasswordRequest.cs" />
+    <Compile Include="Request\UpdateDeviceTokenRequest.cs" />
+    <Compile Include="Request\UpdateLocationRequest.cs" />
+    <Compile Include="Request\UserBookingRequest.cs" />
+    <Compile Include="Request\UserLoginRequest.cs" />
+    <Compile Include="Request\UserLogoutRequest.cs" />
+    <Compile Include="Response\BaseResponse.cs" />
+    <Compile Include="Response\BookingHistoryResponse.cs" />
+    <Compile Include="Response\ChangePasswordResponse.cs" />
+    <Compile Include="Response\CreateUserResponse.cs" />
+    <Compile Include="Response\DriverLoginResponse.cs" />
+    <Compile Include="Response\EditUserResponse.cs" />
+    <Compile Include="Response\ForgetPasswordResponse.cs" />
+    <Compile Include="Response\LocationsResponse.cs" />
+    <Compile Include="Response\UpdateDeviceTokenResponse.cs" />
+    <Compile Include="Response\UpdateLocationResponse.cs" />
+    <Compile Include="Response\UserBookingResponse.cs" />
+    <Compile Include="Response\UserLoginResponse.cs" />
+    <Compile Include="Response\UserLogoutResponse.cs" />
+    <Compile Include="Response\VehicleCategoryResponse.cs" />
+    <Compile Include="RestBinding.cs" />
+    <Compile Include="Utility\Util.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="MobilePortal\fonts\fontawesome-webfont.eot" />
+    <Content Include="MobilePortal\fonts\fontawesome-webfont.ttf" />
+    <Content Include="MobilePortal\fonts\fontawesome-webfont.woff" />
+    <Content Include="MobilePortal\fonts\FontAwesome.otf" />
+    <Content Include="MobilePortal\fonts\Simple-Line-Icons.eot" />
+    <Content Include="MobilePortal\fonts\Simple-Line-Icons.ttf" />
+    <Content Include="MobilePortal\fonts\Simple-Line-Icons.woff" />
+    <None Include="Properties\PublishProfiles\FTMSBus.pubxml" />
+    <None Include="Properties\PublishProfiles\Ogadrive.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OgadriveData\BusTrackingData.csproj">
+      <Project>{12062ed4-ea66-409c-8a78-1cb257039663}</Project>
+      <Name>BusTrackingData</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1615/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

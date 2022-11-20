@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="OgadriveModelStoreContainer" CdmEntityContainer="OgadriveEntities">
+    <EntitySetMapping Name="Currencies">
+      <EntityTypeMapping TypeName="OgadriveModel.Currency">
+        <MappingFragment StoreEntitySet="Currency">
+          <ScalarProperty Name="CurrencyID" ColumnName="CurrencyID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Places">
+      <EntityTypeMapping TypeName="OgadriveModel.Place">
+        <MappingFragment StoreEntitySet="Places">
+          <ScalarProperty Name="PlaceID" ColumnName="PlaceID" />
+          <ScalarProperty Name="PlaceName" ColumnName="PlaceName" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitde" ColumnName="Longitde" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Status">
+      <EntityTypeMapping TypeName="OgadriveModel.Status">
+        <MappingFragment StoreEntitySet="Status">
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="OgadriveModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="DeviceType" ColumnName="DeviceType" />
+          <ScalarProperty Name="DevicePushToken" ColumnName="DevicePushToken" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="FkUserTypeID" ColumnName="FkUserTypeID" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserBookings">
+      <EntityTypeMapping TypeName="OgadriveModel.UserBooking">
+        <MappingFragment StoreEntitySet="UserBooking">
+          <ScalarProperty Name="BookingDateTime" ColumnName="BookingDateTime" />
+          <ScalarProperty Name="BookingID" ColumnName="BookingID" />
+          <ScalarProperty Name="FkUserID" ColumnName="FkUserID" />
+          <ScalarProperty Name="PickupPlaceID" ColumnName="PickupPlaceID" />
+          <ScalarProperty Name="DropPlaceID" ColumnName="DropPlaceID" />
+          <ScalarProperty Name="Fare" ColumnName="Fare" />
+          <ScalarProperty Name="DistanceKM" ColumnName="DistanceKM" />
+          <ScalarProperty Name="FkStatusID" ColumnName="FkStatusID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserTypes">
+      <EntityTypeMapping TypeName="OgadriveModel.UserType">
+        <MappingFragment StoreEntitySet="UserType">
+          <ScalarProperty Name="UserTypeID" ColumnName="UserTypeID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VehicleCatagories">
+      <EntityTypeMapping TypeName="OgadriveModel.VehicleCatagory">
+        <MappingFragment StoreEntitySet="VehicleCatagory">
+          <ScalarProperty Name="VehichleID" ColumnName="VehichleID" />
+          <ScalarProperty Name="FkCurrencyID" ColumnName="FkCurrencyID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="RatePerKM" ColumnName="RatePerKM" />
+          <ScalarProperty Name="BaseFare" ColumnName="BaseFare" />
+          <ScalarProperty Name="WaitPerMinute" ColumnName="WaitPerMinute" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AuthenticationTokens">
+      <EntityTypeMapping TypeName="OgadriveModel.AuthenticationToken">
+        <MappingFragment StoreEntitySet="AuthenticationToken">
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Token" ColumnName="Token" />
+          <ScalarProperty Name="FkUserID" ColumnName="FkUserID" />
+          <ScalarProperty Name="TokenID" ColumnName="TokenID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DriverDetails">
+      <EntityTypeMapping TypeName="OgadriveModel.DriverDetail">
+        <MappingFragment StoreEntitySet="DriverDetails">
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CretedDate" ColumnName="CretedDate" />
+          <ScalarProperty Name="AccountNo" ColumnName="AccountNo" />
+          <ScalarProperty Name="LicenseNo" ColumnName="LicenseNo" />
+          <ScalarProperty Name="ICNumber" ColumnName="ICNumber" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="FkUserID" ColumnName="FkUserID" />
+          <ScalarProperty Name="DriveDetailID" ColumnName="DriveDetailID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

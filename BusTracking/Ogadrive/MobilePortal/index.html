@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title>Bus Tracking</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/simple-line-icons.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/templatemo_style.css">
+    <style>
+        .google-maps {
+            position: relative;
+            padding-bottom: 60%;
+            height: 0;
+            overflow: hidden;
+        }
+
+            .google-maps iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%!important;
+                height: 100%!important;
+            }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+
+    <style>
+        #map-container {
+            position: relative;
+            padding-bottom: 80%;
+            height: 0;
+            overflow: hidden;
+        }
+
+        #map-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%!important;
+            height: 100%!important;
+        }
+
+        #ddimages {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+
+</head>
+<body>
+    <header class="site-header container animated fadeInDown">
+        <div class="header-wrapper">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="site-branding">
+                        <a href="#">
+                            <h1>Bus Tracking System</h1>
+                        </a>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </div>
+    </header>
+    <div id="menu-container">
+
+        <div id="menu-1" class="homepage home-section container">
+            <div style="margin: 0 auto; padding: 5px; max-width: 1000px">
+                <div id="ddimages" style="margin-left: auto; margin-right: auto;"></div>
+                <br>
+                <!--<div id="map-container">
+                    <div id="map-canvas"></div>
+                </div>-->
+                <!--<div class="google-maps">
+
+ <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d49683.37568651638!2d-77.0365184!3d38.8962904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1385703808650" width="600" height="450" frameborder="0" style="border:0"></iframe> </div>
+<!-- </div></div> -->
+            </div>
+
+
+            <div class="contact-holder">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <div class="googlemap-wrapper animated fadeInLeft">
+                            <div id="map-container">
+                                <div id="map-canvas"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <div class="contact-form animated fadeInUp">
+                            <h4>Complete Location Details</h4>
+                            <div class="row">
+                                <fieldset class="col-md-12">
+                                    <input type="text" placeholder="User Current Location" id="currentlocation" disabled>
+                                </fieldset>
+                                <fieldset class="col-md-12">
+                                    <input type="email" placeholder="Bus Current Location" id="buslocation" disabled>
+                                </fieldset>
+                                <fieldset class="col-md-12">
+                                    <input type="text" placeholder="Estimated Distance" id="estimateddistance" disabled>
+                                </fieldset>
+                                <fieldset class="col-md-12">
+                                    <input type="text" placeholder="Estimated Time" id="estimatedtime" disabled>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <footer class="site-footer container text-center">
+                <input id="hdnBusID" type="hidden" />
+                <div class="row">
+                    <div class="col-md-12 copyright">
+                        <p>Copyright &copy; 2015 <a href="#">Bus Tracking System</a></p>
+                    </div>
+                </div>
+            </footer>
+            <!-- templatemo 421 raleway -->
+            <span class="border-top"></span>
+            <span class="border-left"></span>
+            <span class="border-right"></span>
+            <span class="border-bottom"></span>
+            <span class="shape-1"></span>
+            <span class="shape-2"></span>
+
+            <script src="js/jquery.min.js"></script>
+            <script src="js/templatemo_custom.js"></script>
+            <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
+            <script src="js/jquery.ddslick.min.js"></script>
+            <script type="text/javascript">
+
+                //var locationServer = 'http://103.18.244.51:88/BusTrackingServices.svc';
+                var locationServer = 'http://localhost:1615/BusTrackingServices.svc';
+                var mapCanvas = document.getElementById('map-canvas');
+                var map = new google.maps.Map(mapCanvas);
+                var infowindow = new google.maps.InfoWindow();
+                var geocoder = new google.maps.Geocoder();
+                setInterval(function () { BusUpdate($('#hdnBusID').val()) }, 30000);
+                $(function () {
+
+
+                    var ddlData = [];
+                    $.getJSON(locationServer + '/GetBusList', function (data) {
+
+                        $.each(data, function (key, val) {
+                            ddlData.push({
+                                text: val.busDetail.Number,
+                                value: val.busDetail.ID,
+                                description: val.busDetail.Name,
+                                imageSrc: "http://icons.iconarchive.com/icons/iconshock/real-vista-transportation/32/school-bus-icon.png",
+                                latitude: val.busDetail.Latitude,
+                                longitude: val.busDetail.Longitude
+                            });
+                        });
+
+                        $('#ddimages').ddslick({
+
+                            data: ddlData,
+                            width: 300,
+                            imagePosition: "left",
+                            selectText: "Select the bus",
+                            onSelected: function (selectedData) {
+                                BusUpdate(selectedData.selectedData.value);
+                                $('#hdnBusID').val(selectedData.selectedData.value);
+                            }
+                        });
+                    });
+                });
+
+
+                function BusUpdate(busID) {
+                    debugger;
+                    if (busID != "") {
+
+                        $.getJSON(locationServer + '/GetBusDetails/' + busID, function (busData) {
+                            var fromLat, fromLong, toLat, toLong;
+                            var markers = [
+                                     [3.045362, 101.692870],
+                                     [3.045451, 101.694475],
+                                     [3.048814, 101.694870],
+                                     [3.050050, 101.696893],
+                                     [3.052456, 101.697360],
+                                     [3.052482, 101.692365]
+                            ];
+                            var bounds = new google.maps.LatLngBounds();
+                            var mapCanvas = document.getElementById('map-canvas');
+                            var mapOptions = {
+                                center: new google.maps.LatLng(busData.busDetail.Latitude, busData.busDetail.Longitude),
+                                zoom: 17,
+                                mapTypeId: google.maps.MapTypeId.Map
+                            }
+                            var map = new google.maps.Map(mapCanvas, mapOptions);
+                            for (i = 0; i < markers.length; i++) {
+                                var marker = new google.maps.Marker({
+                                    position: { lat: markers[i][0], lng: markers[i][1] },
+                                    map: map,
+                                    title: 'Hello World!'
+                                });
+                                map.fitBounds(bounds);
+                            }
+
+                            toLat = busData.busDetail.Latitude;
+                            toLong = busData.busDetail.Longitude;
+                            var options = {
+                                enableHighAccuracy: true,
+                                timeout: 5000,
+                                maximumAge: 0
+                            };
+                            function success(pos) {
+                                var crd = pos.coords;
+                                fromLat = crd.latitude;
+                                fromLong = crd.longitude;
+                                var totalDistance = calcCrow(fromLat, fromLong, toLat, toLong).toFixed(1);
+                                $('#estimateddistance').val(totalDistance + ' KM');
+                                $('#estimatedtime').val(calcTime(totalDistance));
+                            }
+                            function error(err) {
+                                console.warn('ERROR(' + err.code + '): ' + err.message);
+                            };
+                            navigator.geolocation.getCurrentPosition(success, error, options);
+
+
+                            geocoder.geocode({ 'location': new google.maps.LatLng(busData.busDetail.Latitude, busData.busDetail.Longitude) }, function (results, status) {
+                                if (status == google.maps.GeocoderStatus.OK) {
+                                    if (results[1]) {
+                                        map.setZoom(17);
+                                        marker = new google.maps.Marker({
+                                            position: new google.maps.LatLng(busData.busDetail.Latitude, busData.busDetail.Longitude),
+                                            map: map,
+                                            icon: 'img/bus-marker-icon.png'
+                                        });
+                                        infowindow.setContent(results[1].formatted_address);
+                                        $('#buslocation').val(results[1].formatted_address);
+                                        infowindow.open(map, marker);
+                                    } else {
+                                        map.setZoom(17);
+                                        marker = new google.maps.Marker({
+                                            position: new google.maps.LatLng(busData.busDetail.Latitude, busData.busDetail.Longitude),
+                                            map: map,
+                                            icon: 'img/bus-marker-icon.png'
+                                        });
+                                        infowindow.setContent('Address details not available.');
+                                        $('#buslocation').val('Address details not available.');
+                                        infowindow.open(map, marker);
+                                    }
+                                } else {
+                                    window.alert('Geocoder failed due to: ' + status);
+                                }
+                            });
+                        });
+                    }
+                }
+
+
+                function initialize() {
+                    var geocoder = new google.maps.Geocoder();
+                    var infowindow = new google.maps.InfoWindow();
+                    var options = {
+                        enableHighAccuracy: true,
+                        timeout: 5000,
+                        maximumAge: 0
+                    };
+                    function success(pos) {
+                        var crd = pos.coords;
+                        console.log('Your current position is:');
+                        console.log('Latitude : ' + crd.latitude);
+                        console.log('Longitude: ' + crd.longitude);
+                        console.log('More or less ' + crd.accuracy + ' meters.');
+                        var mapCanvas = document.getElementById('map-canvas');
+                        var mapOptions = {
+                            center: new google.maps.LatLng(crd.latitude, crd.longitude),
+                            zoom: 17,
+                            mapTypeId: google.maps.MapTypeId.SATELLITE
+                        }
+                        var map = new google.maps.Map(mapCanvas, mapOptions);
+                        geocoder.geocode({ 'location': new google.maps.LatLng(crd.latitude, crd.longitude) }, function (results, status) {
+                            if (status == google.maps.GeocoderStatus.OK) {
+                                if (results[1]) {
+                                    map.setZoom(17);
+                                    marker = new google.maps.Marker({
+                                        position: new google.maps.LatLng(crd.latitude, crd.longitude),
+                                        map: map,
+                                        icon: 'img/bus-marker-icon.png'
+                                    });
+                                    infowindow.setContent(results[1].formatted_address);
+                                    $('#currentlocation').val(results[1].formatted_address);
+                                    infowindow.open(map, marker);
+                                } else {
+                                    map.setZoom(17);
+                                    marker = new google.maps.Marker({
+                                        position: new google.maps.LatLng(crd.latitude, crd.longitude),
+                                        map: map,
+                                        icon: 'img/bus-marker-icon.png'
+                                    });
+                                    infowindow.setContent('Address details not available.');
+                                    $('#currentlocation').val('Address details not available.');
+                                    infowindow.open(map, marker);
+                                }
+                            } else {
+                                window.alert('Geocoder failed due to: ' + status);
+                            }
+                        });
+                    };
+                    function error(err) {
+                        console.warn('ERROR(' + err.code + '): ' + err.message);
+                    };
+                    navigator.geolocation.getCurrentPosition(success, error, options);
+                }
+                google.maps.event.addDomListener(window, 'load', initialize);
+
+
+                //This function takes in latitude and longitude of two location and returns the distance between them as the crow flies (in km)
+                function calcCrow(lat1, lon1, lat2, lon2) {
+                    var R = 6371; // km
+                    var dLat = toRad(lat2 - lat1);
+                    var dLon = toRad(lon2 - lon1);
+                    var lat1 = toRad(lat1);
+                    var lat2 = toRad(lat2);
+
+                    var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                      Math.sin(dLon / 2) * Math.sin(dLon / 2) * Math.cos(lat1) * Math.cos(lat2);
+                    var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+                    var d = R * c;
+                    return d;
+                }
+
+                // Converts numeric degrees to radians
+                function toRad(Value) {
+                    return Value * Math.PI / 180;
+                }
+
+                // Calculates estimated time
+                function calcTime(distance) {
+                    var estimatedTime;
+                    var timeData = distance / 40;
+                    var timeDataPercent = distance % 40;
+                    estimatedTimeData = timeData * 60;
+                    if (estimatedTimeData < 60) {
+                        estimatedTimeData = (timeData * 60).toFixed(2) + ' Minutes';
+                    }
+                    else {
+                        estimatedTimeData = parseInt(timeData) + ' Hours ' + calcTime(timeDataPercent);
+                    }
+                    return estimatedTimeData;
+                }
+
+            </script>
+</body>
+</html>

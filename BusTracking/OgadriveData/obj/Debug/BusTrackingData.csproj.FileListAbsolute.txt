@@ -1,0 +1,8 @@
+E:\Clients Project\Bus Tracking\Ogadrive\OgadriveData\bin\Debug\OgadriveData.dll.config
+E:\Clients Project\Bus Tracking\Ogadrive\OgadriveData\bin\Debug\OgadriveData.dll
+E:\Clients Project\Bus Tracking\Ogadrive\OgadriveData\bin\Debug\OgadriveData.pdb
+E:\Clients Project\Bus Tracking\Ogadrive\OgadriveData\bin\Debug\EntityFramework.dll
+E:\Clients Project\Bus Tracking\Ogadrive\OgadriveData\bin\Debug\EntityFramework.xml
+E:\Clients Project\Bus Tracking\Ogadrive\OgadriveData\obj\Debug\OgadriveData.dll
+E:\Clients Project\Bus Tracking\Ogadrive\OgadriveData\obj\Debug\OgadriveData.pdb
+E:\Clients Project\Bus Tracking\Ogadrive\OgadriveData\obj\Debug\BusTrackingData.csprojResolveAssemblyReference.cache

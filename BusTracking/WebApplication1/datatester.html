@@ -1,0 +1,34 @@
+﻿<html>
+<head>
+    <title>URLTester</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        var locationServer = 'http://localhost:43860/DataServices.svc/GetURLData/';
+        $(document).ready(function () {
+                $.ajax({
+                    type: 'POST',
+                    contentType: "application/json; charset=utf-8",
+                    dataType: 'json',
+                    url: locationServer + "www.google.com",
+                    success: function (data) {
+                        if (data.d == true) {
+                            window.location = completeURL;
+                        }
+                        else {
+                            alert('URL is not valid.Please chek again.');
+                        }
+                    },
+                    error: function (a, b, c) {
+                    }
+            });
+        });
+    </script>
+</head>
+<body>
+    <form>
+        <label id="url">www.xyz.com/</label>
+        <input type="text" placeholder="" id="pagename">
+        <input type="button" value="enter" id="urltesterbtn">
+    </form>
+</body>
+</html>

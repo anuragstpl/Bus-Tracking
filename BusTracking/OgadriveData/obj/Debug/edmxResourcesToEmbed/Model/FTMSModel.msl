@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FTMSBusModelStoreContainer" CdmEntityContainer="FTMSBusEntities">
+    <EntitySetMapping Name="BusDetails">
+      <EntityTypeMapping TypeName="FTMSBusModel.BusDetail">
+        <MappingFragment StoreEntitySet="BusDetails">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="Driver" ColumnName="Driver" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="LicenseNo" ColumnName="LicenseNo" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="BusOperations" FunctionName="FTMSBusModel.Store.BusOperations">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="FTMSBusModel.BusOperations_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="Driver" ColumnName="Driver" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="LicenseNo" ColumnName="LicenseNo" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FTMSBusModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="FTMSBusEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BusDetails" EntityType="FTMSBusModel.BusDetail" />
+    <FunctionImport Name="BusOperations" ReturnType="Collection(FTMSBusModel.BusOperations_Result)">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="Number" Mode="In" Type="String" />
+      <Parameter Name="Driver" Mode="In" Type="String" />
+      <Parameter Name="Type" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="LicenseNo" Mode="In" Type="String" />
+      <Parameter Name="Latitude" Mode="In" Type="String" />
+      <Parameter Name="Longitude" Mode="In" Type="String" />
+      <Parameter Name="Mode" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="Int32" />
+      <Parameter Name="UserID" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="BusDetail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Number" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Driver" Type="String" MaxLength="300" Unicode="true" FixedLength="false" />
+    <Property Name="Type" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="LicenseNo" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Latitude" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Longitude" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Password" Type="Int32" />
+  </EntityType>
+  <ComplexType Name="BusOperations_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Number" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Driver" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="Type" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="Email" Nullable="true" />
+    <Property Type="String" Name="LicenseNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Latitude" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Longitude" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Password" Nullable="true" />
+  </ComplexType>
+</Schema>
